@@ -400,6 +400,7 @@ input:focus {
   margin: 10px;
   font-family: cursive;
   overflow: auto;
+  border-radius: 10px;
 }
 .each-blog-title {
   font-weight: 700;
