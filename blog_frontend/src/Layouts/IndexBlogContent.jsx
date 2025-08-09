@@ -6,9 +6,11 @@ const IndexBlogContent = () => {
   useEffect(() => {
     const blogFunction = async () => {
       try {
-        const res = await fetch("http://localhost:4000/");
+        const res = await fetch("https://blog-backend-c7dz.onrender.com/api");
         const data = await res.json();
         setBlogs(data);
+        console.log(data);
+        console.log("blogs:", blogs);
       } catch (err) {
         console.log(err);
       }

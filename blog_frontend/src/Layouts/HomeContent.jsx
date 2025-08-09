@@ -11,7 +11,7 @@ const HomeContent = () => {
   useEffect(() => {
     const blogFunction = async () => {
       try {
-        const res = await fetch("http://localhost:4000/", {
+        const res = await fetch("https://blog-backend-c7dz.onrender.com/api", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

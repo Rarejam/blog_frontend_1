@@ -14,7 +14,7 @@ const Author = () => {
 
     try {
       await axios.post(
-        "http://localhost:4000/author",
+        "https://blog-backend-c7dz.onrender.com/api/author",
         {
           author_password: password,
         },

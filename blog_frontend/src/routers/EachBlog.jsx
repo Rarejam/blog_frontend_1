@@ -15,11 +15,14 @@ const EachBlog = () => {
   useEffect(() => {
     const eachBlog = async () => {
       try {
-        const res = await fetch(`http://localhost:4000/${id}`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const res = await fetch(
+          `https://blog-backend-c7dz.onrender.com/api/${id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
         if (res.status === 403) {
           alert("Access denied youre not signed in yet");
           navigate("/login");
@@ -39,7 +42,7 @@ const EachBlog = () => {
   async function submitComment(e) {
     e.preventDefault();
     const res = await axios.post(
-      "http://localhost:4000/comments",
+      "https://blog-backend-c7dz.onrender.com/api/comments",
       {
         //what we would post
         comment: userComment,

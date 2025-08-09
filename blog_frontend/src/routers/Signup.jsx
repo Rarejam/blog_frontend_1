@@ -20,7 +20,10 @@ const Signup = () => {
       confirm_password,
     };
     try {
-      await axios.post("http://localhost:4000/signup", submitData);
+      await axios.post(
+        "https://blog-backend-c7dz.onrender.com/api/signup",
+        submitData
+      );
       navigate("/login");
     } catch (error) {
       if (

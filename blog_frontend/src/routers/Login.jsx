@@ -21,7 +21,10 @@ const Login = () => {
     };
 
     try {
-      const res = await axios.post("http://localhost:4000/login", formData);
+      const res = await axios.post(
+        "https://blog-backend-c7dz.onrender.com/api/login",
+        formData
+      );
       //get token from res.data.token
       localStorage.setItem("token", res.data.token);
       navigate("/home");
