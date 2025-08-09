@@ -144,8 +144,9 @@ button:active {
   grid-template-rows: repeat(auto-fill, minmax(300px, auto));
   gap: 1rem;
   padding: 1rem;
+  background-color: white;
 
-  background-color: #f9fafb;
+  /* background-color: #f9fafb; */
 }
 
 .blog {
@@ -361,7 +362,8 @@ input:focus {
   grid-template-rows: repeat(auto-fill, minmax(400px, auto));
   gap: 2rem;
   padding: 1rem;
-  background-color: #f9fafb;
+  background-color: white;
+  /* background-color: #f9fafb; */
 }
 .home-blog-image {
   height: 300px;

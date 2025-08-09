@@ -6,6 +6,7 @@ import Signup from "./routers/Signup";
 import Home from "./routers/Home";
 import EachBlog from "./routers/EachBlog";
 import HomeContent from "./Layouts/HomeContent";
+import Author from "./routers/Author";
 
 const routes = [
   {
@@ -41,6 +42,10 @@ const routes = [
       {
         path: ":id",
         element: <EachBlog />,
+      },
+      {
+        path: "author",
+        element: <Author />,
       },
     ],
   },

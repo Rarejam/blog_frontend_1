@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import ripple from "../assets/ripple.gif";
 const IndexBlogContent = () => {
   const [blogs, setBlogs] = useState([]);
 
@@ -17,8 +17,27 @@ const IndexBlogContent = () => {
   }, []);
   return (
     <div className="index-blog-content">
-      {!blogs ? (
-        <div>No blogs to view</div>
+      {blogs.length === 0 ? (
+        <div
+          style={{
+            minHeight: "100vh",
+            width: "100vw",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: "white",
+          }}
+        >
+          <img
+            src={ripple}
+            alt="Loading..."
+            style={{
+              width: "120px",
+              height: "120px",
+              objectFit: "contain",
+            }}
+          />
+        </div>
       ) : (
         blogs.map((blog) => {
           return (

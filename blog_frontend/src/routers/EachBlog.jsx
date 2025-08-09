@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import send from "../assets/send.svg";
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -9,10 +9,22 @@ const EachBlog = () => {
   const [comments, setComments] = useState([]);
   const [userComment, setUserComment] = useState("");
 
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+
   useEffect(() => {
     const eachBlog = async () => {
       try {
-        const res = await fetch(`http://localhost:4000/${id}`);
+        const res = await fetch(`http://localhost:4000/${id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        if (res.status === 403) {
+          alert("Access denied youre not signed in yet");
+          navigate("/login");
+        }
+
         const data = await res.json();
         setBlog(data.blog);
         setComments(data.comments);
@@ -26,11 +38,19 @@ const EachBlog = () => {
 
   async function submitComment(e) {
     e.preventDefault();
-    const res = await axios.post("http://localhost:4000/comments", {
-      //what we would post
-      comment: userComment,
-      blogId: id,
-    });
+    const res = await axios.post(
+      "http://localhost:4000/comments",
+      {
+        //what we would post
+        comment: userComment,
+        blogId: id,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
     setComments((prev) => [...prev, res.data]);
     setUserComment("");
   }
@@ -104,7 +124,7 @@ const EachBlog = () => {
           ) : (
             comments.map((comment) => (
               <div className="each-comment-div" key={comment.id}>
-                <div className="comment-user">~ {comment.authorId}:</div>{" "}
+                <div className="comment-user">~ {comment.username}:</div>{" "}
                 {/* optional */}
                 <div className="comment-detail">{comment.comment}</div>
                 <div className="comment-date">

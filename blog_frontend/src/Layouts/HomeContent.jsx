@@ -1,13 +1,27 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import interwind from "../assets/interwind.gif";
 
 const HomeContent = () => {
   const [blogs, setBlogs] = useState([]);
 
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+
   useEffect(() => {
     const blogFunction = async () => {
       try {
-        const res = await fetch("http://localhost:4000/");
+        const res = await fetch("http://localhost:4000/", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        if (res.status === 403) {
+          alert("Access denied youre not signed in yet");
+          navigate("/login");
+        }
+
         const data = await res.json();
         setBlogs(data);
       } catch (err) {
@@ -18,8 +32,27 @@ const HomeContent = () => {
   }, []);
   return (
     <div className="home-blog-content">
-      {!blogs ? (
-        <div>No blogs to view</div>
+      {blogs.length === 0 ? (
+        <div
+          style={{
+            height: "100vh",
+            width: "100vw",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: "transparent",
+          }}
+        >
+          <img
+            src={interwind}
+            alt="Loading..."
+            style={{
+              width: "120px",
+              height: "120px",
+              objectFit: "contain",
+            }}
+          />
+        </div>
       ) : (
         blogs.map((blog) => (
           <Link

@@ -1,6 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const HomeHeader = () => {
+  const navigate = useNavigate();
+  function logout() {
+    localStorage.removeItem("token");
+    navigate("/");
+  }
   return (
     <div className="index-header">
       <div>Blogare</div>
@@ -11,7 +16,12 @@ const HomeHeader = () => {
           </Link>
         </div>
         <div>
-          <Link to="/" className="custom-link">
+          <Link to="author" className="custom-link">
+            Author
+          </Link>
+        </div>
+        <div>
+          <Link onClick={() => logout()} className="custom-link">
             Logout
           </Link>
         </div>
