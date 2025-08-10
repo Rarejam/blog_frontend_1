@@ -615,7 +615,8 @@ textarea {
 
   button {
     width: 60% !important;
-    height: 2.5rem !important;
+    height: 3rem !important;
+    margin: 1%;
   }
 }
 
