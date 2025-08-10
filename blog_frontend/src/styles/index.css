@@ -111,7 +111,6 @@ body {
   flex-wrap: wrap;
 }
 .blog_icon {
-  background-image: url("../assets/blog.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;

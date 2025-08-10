@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import blogIcon from "../assets/blog.png";
+
 const IndexContent = () => {
   return (
     <div className="index-content">
@@ -17,7 +19,12 @@ const IndexContent = () => {
           </button>
         </div>
       </div>
-      <div className="blog_icon"></div>
+      <div
+        className="blog_icon"
+        style={{
+          backgroundImage: `url(${blogIcon})`,
+        }}
+      ></div>
     </div>
   );
 };
