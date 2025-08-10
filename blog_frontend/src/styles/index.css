@@ -154,7 +154,7 @@ button:active {
   font-size: 18px;
   display: flex;
   flex-direction: column;
-  font-family: cursive;
+  /* font-family: cursive; */
   cursor: pointer;
 }
 .blog:hover {
@@ -175,7 +175,8 @@ button:active {
   /* //text-overflow : ellipsis is to truncate a long statement to one line */
   text-overflow: ellipsis;
   margin: 10px;
-  font-family: cursive;
+  /* font-family: cursive; */
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .blog-title {
   font-weight: 700;
@@ -384,7 +385,7 @@ input:focus {
   font-size: 18px;
   display: flex;
   flex-direction: column;
-  font-family: cursive;
+  /* font-family: cursive; */
   width: 50%;
   min-height: auto;
   /* max-height: 100vh; */
@@ -402,7 +403,7 @@ input:focus {
 .each-blog-description {
   /* //text-overflow : ellipsis is to truncate a long statement to one line */
   margin: 10px;
-  font-family: cursive;
+  /* font-family: cursive; */
   overflow: auto;
   border-radius: 10px;
 }
@@ -707,6 +708,7 @@ textarea {
 body {
   overflow-x: hidden;
   max-width: 100vw;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .blog_icon {
