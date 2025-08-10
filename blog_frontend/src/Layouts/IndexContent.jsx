@@ -24,7 +24,9 @@ const IndexContent = () => {
         style={{
           backgroundImage: `url(${blogIcon})`,
         }}
-      ></div>
+      >
+        fgre
+      </div>
     </div>
   );
 };
