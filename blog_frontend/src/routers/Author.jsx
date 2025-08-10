@@ -25,7 +25,7 @@ const Author = () => {
         }
       );
       //navigates to external urls
-      window.location.href = "http://localhost:5174/";
+      window.location.href = "https://blog-frontend-2-7abu.vercel.app/";
 
       //navigates to insternal urls within react-router
       //   navigate("/home");
