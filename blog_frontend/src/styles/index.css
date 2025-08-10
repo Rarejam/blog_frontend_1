@@ -721,16 +721,40 @@ body {
   background-position: center;
   padding: 10px;
 }
-@media (max-width: 768px) {
+@media (width < 768px) {
   .blog_icon {
     flex-shrink: 0;
     width: 90%;
     height: 90%;
     min-width: 60vw;
     min-height: 60vh !important;
+    max-height: auto;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     box-sizing: border-box;
+  }
+  .blog {
+    max-width: 95vw;
+    border-radius: 10px;
+  }
+
+  .home-blog-image {
+    width: 100%; /* full container width */
+    max-width: auto; /* optional max width */
+    min-height: 70vh !important;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover; /* preserve aspect ratio */
+    background-position: center;
+    border-radius: 8px;
+    border: 1px solid yellow;
+  }
+  .blog-description {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 85vw;
+    justify-items: center;
+    white-space: nowrap;
   }
 }
