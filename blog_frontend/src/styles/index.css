@@ -598,8 +598,12 @@ textarea {
   }
 
   .index-content > div:first-child {
-    font-size: 2rem !important;
+    font-size: 1.5rem !important;
     margin: 1rem 0;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     text-align: center;
   }
 
@@ -610,8 +614,8 @@ textarea {
   }
 
   button {
-    width: 100% !important;
-    height: 3.5rem !important;
+    width: 60% !important;
+    height: 2.5rem !important;
   }
 }
 
@@ -724,9 +728,9 @@ body {
 @media (width < 768px) {
   .blog_icon {
     flex-shrink: 0;
-    width: 90%;
+    width: 70%;
     height: 90%;
-    min-width: 60vw;
+    min-width: 4%;
     min-height: 50vh !important;
     max-height: auto;
     background-size: contain;
