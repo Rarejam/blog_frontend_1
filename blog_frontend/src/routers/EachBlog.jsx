@@ -1,5 +1,6 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
 import send from "../assets/send.svg";
+import ripple from "../assets/ripple.gif";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -37,7 +38,29 @@ const EachBlog = () => {
     };
     eachBlog();
   }, [id]);
-  if (!blog) return <p>Loading...</p>;
+  if (!blog)
+    return (
+      <div
+        style={{
+          height: "100vh",
+          width: "100vw",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "transparent",
+        }}
+      >
+        <img
+          src={ripple}
+          alt="Loading..."
+          style={{
+            width: "120px",
+            height: "120px",
+            objectFit: "contain",
+          }}
+        />
+      </div>
+    );
 
   async function submitComment(e) {
     e.preventDefault();
